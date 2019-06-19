@@ -1,4 +1,4 @@
-**install tools **
+**install tools**
 
 install maven >>
 
@@ -8,11 +8,11 @@ install Java8
 
 https://www.java.com/es/download/
 
-** build and run tests **
+**build and run tests**
 
 `mvn clean install`
 
-** if everything is ok. run it like **
+**if everything is ok. run it like**
 
 `mvn spring-boot:run`
 
@@ -31,7 +31,7 @@ https://www.java.com/es/download/
 `curl -i -X POST    -H "Content-Type:multipart/form-data"    -F "csv=@\"./matrix.csv\";type=text/csv;filename=\"matrix.csv\""  'http://localhost:8080/inverse'`
 
 
-** Structure **
+**Structure**
 
 
 the main entrance is the package controller. we have a controller called **MatrixController** . (front controller pattern by spring)
@@ -48,7 +48,7 @@ So the core business in this case is all inside the Matrix domain object.
 There are junit tests for Validator, Matrix, and parser. to test controllers over Java I should create integration tests.
 
 
-** Other things **
+**Other things**
 
 I've used java 8 lambda expresions in some cases, but I could have resolved with two fors or one for iterating over the array of array called data
 inside the matrix
@@ -60,7 +60,7 @@ application.properties in order to initialize beans.
 There is no service or dao layers. I though it was not necessary .
 
 
-** Errors **
+**Errors**
 
 if the matrix if not valid or the file is empty or there is some problem at parser time with the file. the application will return a bad request http verb.
 but I could have customize exception for every cases. It should be a good practice.
